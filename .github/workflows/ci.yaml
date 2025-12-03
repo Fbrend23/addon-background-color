@@ -28,9 +28,14 @@ jobs:
             - name: Build Firefox
               run: npm run build:firefox
 
-            - name: Upload
+            - name: Upload Chrome Artifact
               uses: actions/upload-artifact@v4
               with:
-                  name: chrome
-                  path: |
-                      .output
+                  name: chromeArtifact
+                  path: .output/chrome-mv3/
+
+            - name: Upload Firefox Artifact
+              uses: actions/upload-artifact@v4
+              with:
+                  name: firefoxArtifact
+                  path: .output/firefox-mv2/
